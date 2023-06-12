@@ -4,13 +4,13 @@ using UnityEngine.UI;
 
 namespace HSVPicker
 {
-    [RequireComponent(typeof(BoxSlider), typeof(RawImage)), ExecuteInEditMode()]
+    [RequireComponent(typeof(PokableBoxSlider), typeof(RawImage)), ExecuteInEditMode()]
     [DefaultExecutionOrder(10)]
     public class SVBoxSlider : MonoBehaviour, IEndDragHandler
     {
         public ColorPicker picker;
 
-        private BoxSlider slider;
+        private PokableBoxSlider slider;
         private RawImage image;
 
         private int textureWidth = 128;
@@ -32,7 +32,7 @@ namespace HSVPicker
 
         private void Awake()
         {
-            slider = GetComponent<BoxSlider>();
+            slider = GetComponent<PokableBoxSlider>();
             image = GetComponent<RawImage>();
         }
 

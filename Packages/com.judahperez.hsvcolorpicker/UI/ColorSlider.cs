@@ -6,8 +6,8 @@ namespace HSVPicker
     /// <summary>
     /// Displays one of the color values of aColorPicker
     /// </summary>
-    [RequireComponent(typeof(Slider))]
-    [DefaultExecutionOrder(10)]
+    //[RequireComponent(typeof(Slider))]
+    //[DefaultExecutionOrder(10)]
     public class ColorSlider : MonoBehaviour, IEndDragHandler
     {
         public ColorPicker hsvpicker;
@@ -17,7 +17,7 @@ namespace HSVPicker
         /// </summary>
         public ColorValues type;
 
-        private Slider slider;
+        private PokableSlider slider;
 
         private bool listen = true;
 
@@ -26,7 +26,7 @@ namespace HSVPicker
 
         private void Awake()
         {
-            slider = GetComponent<Slider>();
+            slider = GetComponent<PokableSlider>();
 
             hsvpicker.onValueChanged.AddListener(ColorChanged);
             hsvpicker.onHSVChanged.AddListener(HSVChanged);
@@ -101,9 +101,9 @@ namespace HSVPicker
             onSliderChangeEndEvent.Invoke(slider.normalizedValue);
         }
 
-        public void SliderClicked(BaseEventData data)
-        {
-            SliderChanged(slider.value);
-        }
+        //public void SliderClicked(BaseEventData data)
+        //{
+        //    SliderChanged(slider.value);
+        //}
     }
 }
